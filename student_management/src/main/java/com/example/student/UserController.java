@@ -1,5 +1,8 @@
-package com.cvr.user_demo;
+package com.example.student;
 
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,10 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.*;
-
-import org.springframework.http.HttpStatus;
 
 @RestController
 @RequestMapping("/users")
@@ -32,12 +31,7 @@ public class UserController {
 	{
 		return userService.find(id).get();
 	}
-	@GetMapping("/email/{name}")
-	public String findEmail(@PathVariable String name) {
-	    return userService.findByName(name)
-	                      .map(User::getEmail)
-	                      .orElse("User not found");
-	}
+	
 	@GetMapping()
 	public List<User> finadAll(){
 		return userService.findAll();

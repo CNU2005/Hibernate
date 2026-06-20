@@ -1,4 +1,5 @@
-package com.cvr.user_demo;
+package com.example.student;
+
 
 import java.util.*;
 import java.util.Optional;
@@ -24,7 +25,4 @@ public class UserService {
 	public List<User> findAll(){
 		return userRepository.findAll();
 	}
-	public Optional<User> findByName(String name) {
-        return userRepository.findByName(name);
-    }
 }
